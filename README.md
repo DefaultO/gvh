@@ -1,3 +1,5 @@
+![grafik](https://github.com/user-attachments/assets/396806ef-1e8f-4337-bcbe-a9c3a038785e)
+
 # Goodbye Volcano High (GVH) Modding Project
 
 ## Game Info
