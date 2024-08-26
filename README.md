@@ -30,7 +30,9 @@ tasklist /FI "IMAGENAME eq Goodbye Volcano High.exe" | find /I "Goodbye Volcano 
 xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\Goodbye Volcano High\Mods\"
 start steam://run/1310330
 ```
-figured out how to customize the title screen. so I added a few buttons. have to find out how to resize them still.
+figured out how to customize the title screen. so I added a few buttons. have to find out how to resize them still. currently cloning existing buttons because I can't find the initialization code of the custom button. then deleting the text translation componenn, so that I can change the text of the button without it getting automatically replaced.
+
+todo: customize mod settings overlay
 
 idk why, but...<br/><br/>
 a) I wasn't able to get most of the ui gameobjects directly. they didn't appear when using the GameObject.Find... methods (https://gist.github.com/DefaultO/aecfb687d9a4e73552d61fe23324cc8b). so I currently step down the hierarchy using the code below.<br/>
