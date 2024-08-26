@@ -9,6 +9,20 @@ Engine: **Unity 2021.3.18f1** (*mono*)<br/>
 Binary of Interest: ``...\Goodbye Volcano High\Goodbye Volcano High_Data\Managed\Gvh.dll``<br/>
 Protections: None.
 
+## Features I want to focus on:
+- making the rythm minigame playable using custom beatmaps, perhaps automap-functionality for osu beatmaps and other popular rythm game beatmap formats
+- fixing (missing words in) subtitles
+- fixing abrupt audio cuts (if they don't come pre-cut like that)
+- adding a restart button in the pause menu for the minigame (story)
+- way in the future, multiple saves and or time-warp functionality (go back to events that already occured, preferably using a slider with images similiar to a video player, but that's a problem for future me)
+- way in the future an easy modding framework like everest for celeste. so that people can develop their own fan-fiction or add their own features to the base game.
+
+## Why do I do this?
+the people that paid the full price for this game deserve more. I got it for just under 20€ and think that additions like these would be so easy to develop/design if you had access to the unity project. it would bring so much extra-content/replayability to the game that it kinda annoys me that I have to figure everything out by myself while developing a full-fledged melonloader mod for this. you can't imagine how hard it is to reuse the ui components of the game and design some user interface/scene with it using code alone.
+
+## Release when?
+idk. won't work on the mod all the time. won't have motivation to continue every day. it's a slow process that will take its time. so no eta. it is ready when it is ready. first release comes when the mod has user-generated beatmap support.
+
 ## Game Scenes (spoiler):
 I spotted a few gaps in between the numbering. I can't tell if this is due to cut content or other reasons.
 ### General:
