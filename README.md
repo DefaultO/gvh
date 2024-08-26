@@ -23,6 +23,54 @@ the people that paid the full price for this game deserve more. I got it for jus
 ## Release when?
 idk. won't work on the mod all the time. won't have motivation to continue every day. it's a slow process that will take its time. so no eta. it is ready when it is ready. first release comes when the mod has user-generated beatmap support.
 
+## Update 1.0.0
+figured out how to customize the title screen. so I added a few buttons.
+
+idk why, but...<br/><br/>
+a) I wasn't able to get most of the ui gameobjects directly. they didn't appear when using the GameObject.Find... methods. so I currently step down the hierarchy using the code below.<br/>
+edit: I was told this can be caused by objects not being active. they looked active to me in unity explorer though. so potential fix I was told: use Resources.Find... instead?
+```csharp
+var screen1 =
+    FindChild(
+        FindChild(
+            FindChild(test, "UICanvas"),
+        "SafeArea"),
+    "Screen1");
+
+...
+
+public static GameObject FindChild(GameObject parent, string name)
+{
+    if (parent == null)
+    {
+        MelonLogger.Warning("Parent GameObject is null.");
+        return null;
+    }
+
+    Transform childTransform = parent.transform.Find(name);
+    if (childTransform != null)
+    {
+        return childTransform.gameObject;
+    }
+    else
+    {
+        MelonLogger.Warning($"Child GameObject with name '{name}' not found.");
+        return null; // should probably return the parent the more I think about this while writing the readme.md
+    }
+}
+```
+b) when getting objects directly using its type/class name, they don't seem to have childrens. so I currently get all objects in the scenes and filter for the ones I want like this:
+```csharp
+GameObject[] titleSceneObjects = GameObject.FindObjectsOfType<GameObject>();
+MelonLogger.Msg($"Total objects found: {titleSceneObjects.Length}");
+
+GameObject[] titleSceneObjects2 = Resources.FindObjectsOfTypeAll<GameObject>();
+MelonLogger.Msg($"Total objects found: {titleSceneObjects2.Length}");
+
+var test = titleSceneObjects.Where(x => x.name == "Title").FirstOrDefault();
+MelonLogger.Msg($"{test}: {test.transform.childCount}");
+```
+
 ## Game Scenes (spoiler):
 I spotted a few gaps in between the numbering. I can't tell if this is due to cut content or other reasons.
 ### General:
