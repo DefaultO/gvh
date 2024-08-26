@@ -24,10 +24,16 @@ the people that paid the full price for this game deserve more. I got it for jus
 idk. won't work on the mod all the time. won't have motivation to continue every day. it's a slow process that will take its time. so no eta. it is ready when it is ready. first release comes when the mod has user-generated beatmap support.
 
 ## Update 1.0.0
+decided to finally add build events to my visual studio project solution, because I got tired of building the project and copying the library into the mods folder every 10 seconds from trial and erroring. get inspired or something:
+```ps
+tasklist /FI "IMAGENAME eq Goodbye Volcano High.exe" | find /I "Goodbye Volcano High.exe" && taskkill /F /IM "Goodbye Volcano High.exe"
+xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\Goodbye Volcano High\Mods\"
+start steam://run/1310330
+```
 figured out how to customize the title screen. so I added a few buttons.
 
 idk why, but...<br/><br/>
-a) I wasn't able to get most of the ui gameobjects directly. they didn't appear when using the GameObject.Find... methods. so I currently step down the hierarchy using the code below.<br/>
+a) I wasn't able to get most of the ui gameobjects directly. they didn't appear when using the GameObject.Find... methods (https://gist.github.com/DefaultO/aecfb687d9a4e73552d61fe23324cc8b). so I currently step down the hierarchy using the code below.<br/>
 edit: I was told this can be caused by objects not being active. they looked active to me in unity explorer though. so potential fix I was told: use Resources.Find... instead?
 ```csharp
 var screen1 =
